@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gaintree"
+version = "0.1.0"
+description = "Classification tree grown by maximising information gain — robust to messy tabular data, NumPy only."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Prem Gudivada" }]
+keywords = ["classification-tree", "shannon-entropy", "c45", "missing-values", "tabular-data", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 4 - Beta",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = ["numpy>=1.22"]
+
+[project.optional-dependencies]
+draw = ["matplotlib>=3.6"]
+test = ["pytest>=8", "matplotlib", "pandas", "scipy", "scikit-learn"]
+
+[project.scripts]
+gaintree = "gaintree.cli:main"
+
+[project.urls]
+Source = "https://github.com/premgudivada7/decision-tree-using-entropy"
